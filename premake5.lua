@@ -5,13 +5,25 @@ project "imgui"
   staticruntime "off"
 
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+  objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
   files
   {
-      "**.h",
-      "**.cpp",
-  
+        -- Core header
+        "imgui.h",
+        "imgui.cpp",
+        "imgui_draw.cpp",
+        "imgui_tables.cpp",
+        "imgui_widgets.cpp",
+        "imgui_demo.cpp",
+    
+        -- Internal headers
+        "imgui_internal.h",
+        "imconfig.h",
+        "imstb_rectpack.h",
+        "imstb_textedit.h",
+        "imstb_truetype.h",
+    
       -- Backends File to use GLFW and OPENGL    
       "backends/imgui_impl_glfw.h",
       "backends/imgui_impl_glfw.cpp",
